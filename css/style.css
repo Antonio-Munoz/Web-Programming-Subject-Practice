@@ -1,0 +1,260 @@
+
+.body-bg-color{
+    background-color: var(--my-bg);
+}
+
+.header-bg-color{
+    background-color: var(--my-text);
+}
+
+.secondary-bg{
+    background-color: var(--my-paragraph);
+}
+
+.paragraph-color{
+  color: var(--my-paragraph);
+}
+
+.to-hide{
+  color: var(--my-bg);
+}
+
+.paragraph-style{
+  color: var(--my-paragraph);
+  font-size: 18px;
+}
+
+.paragraph-style-2{
+  color: var(--my-paragraph);
+  font-size: 12px;
+}
+
+.button-color{
+    background-color: var(--my-button);
+    color: var(--my-text);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.rounded-corners{
+    border-radius: var(--my-border-radius);
+}
+
+.img-size{
+    height: 23rem;
+}
+
+.img-size-secondary{
+  width: 20rem;
+}
+
+.img-size-profile{
+  width: 10em;
+}
+
+.img-size-register{
+  height: 10em;
+}
+
+.icon-size{
+  width: 25px;
+}
+
+.card-width{
+  width: 16rem;
+}
+
+.card-width-secondary{
+  width: 14rem;
+}
+
+.my-shadows{
+  box-shadow: 0px 0px 30px 3px rgba(255, 255, 255, 0.25);
+}
+
+.pdf-size{
+    width: 50vw;
+    height: 975px;
+}
+
+.pdf-size-unidades{
+  width: 50vw;
+  height: 500px;
+}
+
+.tutorial-cards{
+  transition: .3s all ease-in-out;
+}
+
+.tutorial-cards:hover{
+  box-shadow: 0px 0px 30px 3px rgba(255, 255, 255, 0.25);
+  width: 18rem;
+}
+
+.flex-container{
+  transition: .3s all ease;
+}
+
+.flex-children{
+  width: 18rem;
+  flex-grow: 1;
+  flex-basis: 400;
+  transition: .3s all ease;
+}
+
+.flex-children:hover{
+  flex-grow: 2;
+  box-shadow: 0px 0px 30px 3px rgba(255, 255, 255, 0.25);
+}
+
+/* Header dropdown menu style  ######################################### */
+.submenu{
+  position: absolute;
+  top: 100%;
+  background-color: var(--my-paragraph);
+  /* box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 0px 30px 3px rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  max-height: 0;
+  transition: max-height .3s ease;
+  overflow: hidden;
+}
+
+.submenu.show{
+  max-height: 300px;
+}
+.submenu:hover{
+  max-height: 300px;
+}
+
+.submenu ul{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px;
+}
+
+.submenu ul li {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.submenu ul li a {
+  width: 100%;
+  color: var(--my-text);
+}
+
+/* Contact Style Section ######################################### */
+
+.contact-data{
+    display: flex;
+    flex-direction: column;
+    background-color: red   ;
+}
+
+.contact-data li{
+    display: inline-flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Contact Form Style Subsection ################################ */
+
+  .inputBox {
+    position: relative;
+    /* width: 250px; */
+  }
+  .inputBox input,
+  .inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: var(--my-paragraph);
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid var(--my-paragraph);
+    border-bottom: 2px solid var(--my-paragraph); 
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+    padding-top: 20px;
+  }
+  .inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: var(--my-paragraph);
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+  }
+  .inputBox input:valid~span,
+  .inputBox input:focus~span,
+  .inputBox textarea:valid~span,
+  .inputBox textarea:focus~span {
+    transform: translateX(13px) translateY(-15px);
+    font-size: 0.8em;
+    font-weight: 700;
+    padding: 5px 10px;
+    background: var(--my-paragraph);
+    letter-spacing: 0.2em;
+    color: var(--my-text);
+    border: 2px;
+  }
+  .inputBox input:valid,
+  .inputBox input:focus,
+  .inputBox textarea:valid,
+  .inputBox textarea:focus {
+    border: 2px solid var(--my-paragraph);
+    border-radius: 8px;
+  }
+  .enter {
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    border: 2px solid var(--my-paragraph);
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--my-paragraph);
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 3em;
+  }
+  .enter:hover {
+    background-color: var(--my-paragraph);
+    color: var(--my-text);
+  } 
+
+/* Swiper Style Section ######################################### */
+.swiper{
+    display: flex;
+    justify-content: center;
+    width: 30vw;
+    height: 30vw;
+}
+
+.swiper-slide{
+    /* background-color: paleturquoise; */
+    background-color: var(--my-paragraph);
+    border-radius: var(--my-border-radius);
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 30px 3px rgba(255, 255, 255, 0.25);
+    flex-grow: 1;
+    font-size: 50px;
+    font-style: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
