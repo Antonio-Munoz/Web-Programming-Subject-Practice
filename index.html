@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $show = false;
 if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] == 1){  
@@ -14,7 +14,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
   }
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,14 +63,14 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                   <li class="nav-item mr-1">
                     <a class="nav-link" href="pages/contacto.php">Contacto</a>
                   </li>
-                  <?php
+                  <!-- <?php
                   if($show){
-                  ?>
+                  ?> -->
                     <li class="nav-item mr-1">
-                      <a class="nav-link" href="tutoriales.php">Tutoriales</a>
+                      <a class="nav-link" href="pages/tutoriales.html">Tutoriales</a>
                     </li>
                     
-                    <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
+                    <!-- <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
                       <img src="img/user-images/<?php echo $photo; ?>" class="d-inline rounded-circle icon-size">
                       <li class='nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center'>
                         <a href='#' class='nav-link h5 d-flex align-items-center justify-content-center'>
@@ -91,18 +91,18 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                           </ul>
                         </div>
                       </li>
-                    </li>
-                  <?php
+                    </li> -->
+                  <!-- <?php
                   }else{
-                    echo "
-                      <li class=\"nav-item\">
-                        <a href=\"pages/login.php\" class=\"btn button-color d-inline-flex align-items-center px-4\">
+                    echo " -->
+                      <li class="nav-item">
+                        <a href="pages/login.php" class="btn button-color d-inline-flex align-items-center px-4">
                           Iniciar sesión
                         </a>
                       </li>
-                    ";
+                    <!-- ";
                   }
-                  ?>
+                  ?> -->
                 </ul>
               </div>
             </div>
