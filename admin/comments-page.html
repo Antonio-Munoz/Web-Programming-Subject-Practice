@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require 'php/connectDB.php';
 session_start();
 
@@ -14,7 +14,7 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
     }
 }else {
     header('Location: login.php');
-}
+} -->
 
 
 ?>
@@ -113,9 +113,9 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                             </div>
                         </div>
 
-                        <?php
+                        <!-- <?php
                         include 'php/message.php';
-                        ?>
+                        ?> -->
 
                         <div class="card mb-4">
                             <div class="card-header d-flex justify-content-between">
@@ -138,10 +138,10 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                     </thead>
                                     <tbody>
 
-                                        <?php
+                                        <!-- <?php
                                         if(mysqli_num_rows($query_run) > 0) {
                                             foreach ($query_run as $comment) {
-                                        ?>
+                                        ?> -->
                                         
                                         <tr>
                                             <td><?php echo $comment['NAME']; ?></td>
@@ -156,10 +156,10 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                             </td>
                                         </tr>
 
-                                        <?php
+                                        <!-- <?php
                                             }
                                         }
-                                        ?>
+                                        ?> -->
                                         
                                     </tbody>
                                 </table>

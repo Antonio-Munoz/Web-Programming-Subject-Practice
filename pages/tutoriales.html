@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require '../php/connectDB.php';
 session_start();
 $show = false;
@@ -17,7 +17,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
   $query_run = mysqli_query($conexion, $query);
   
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +33,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark header-bg-color py-2" aria-label="Eighth navbar example">
             <div class="container">
-              <a class="navbar-brand d-flex align-items-center" href="../index.php">
+              <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <img src="../img/Logo.svg" alt="web Logo" width="50">
                 <h1 class="h4 ml-3 text-center" >Programación Web</h1>
               </a>
@@ -41,10 +41,10 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
               <div class="" id="navbarsExample07">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mr-1">
-                    <a class="nav-link" aria-current="page" href="../index.php">inicio</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">inicio</a>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="acerca-de.php">Acerca de</a>
+                    <a class="nav-link" href="acerca-de.html">Acerca de</a>
                   </li>
                   <li class="nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center">
                     <a href="#" class="nav-link d-flex align-items-center justify-content-center">
@@ -55,55 +55,55 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                     </a>
                     <div class="submenu">
                       <ul>
-                        <li><a href="unidades/unidad1.php">Unidad 1</a></li>
+                        <li><a href="unidades/unidad1.html">Unidad 1</a></li>
                         <!-- <li><a href="#">Unidad 2</a></li> -->
                         <!-- <li><a href="#">Unidad 3</a></li> -->
                       </ul>
                     </div>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="contacto.php">Contacto</a>
+                    <a class="nav-link" href="contacto.html">Contacto</a>
                   </li>
-                  <?php
+                  <!-- <?php
                   if($show){
-                  ?>
+                  ?> -->
                       <li class="nav-item mr-1">
-                        <a class="nav-link active" href="tutoriales.php">Tutoriales</a>
+                        <a class="nav-link active" href="tutoriales.html">Tutoriales</a>
                       </li>
                       
                       <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
-                        <img src="../img/user-images/<?php echo $photo; ?>" class="d-inline rounded-circle icon-size">
                         <li class='nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center'>
                           <a href='#' class='nav-link h5 d-flex align-items-center justify-content-center'>
-                          <?php echo $_SESSION['username'];?>
+                            Usuario
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill ml-1' viewBox='0 0 16 16'>
                               <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/>
                             </svg>
                           </a>
                           <div class='submenu'>
                             <ul>
-                              <li><a href='perfil.php'>Perfil de usuario</a></li>
+                              <li><a href='perfil.html'>Perfil de usuario</a></li>
 
-                              <?php
+                              <!-- <?php
                               echo $showadmin? "<li><a href='../admin/index.php'>Admin</a></li>" : '';
-                              ?>
+                              ?> -->
+                              <li><a href='../admin/login.html'>Admin</a></li>
 
-                              <li><a href='../php/logout.php'>Cerrar sesion</a></li>
+                              <li><a href='../php/logout.html'>Cerrar sesion</a></li>
                             </ul>
                           </div>
                         </li>
                       </li>
-                  <?php
+                  <!-- <?php
                   }else{
-                    echo "
-                      <li class=\"nav-item\">
-                        <a href=\"pages/login.php\" class=\"btn button-color d-inline-flex align-items-center px-4\">
+                    echo " -->
+                      <li class="nav-item">
+                        <a href="login.html" class="btn button-color d-inline-flex align-items-center px-4">
                           Iniciar sesión
                         </a>
                       </li>
-                    ";
+                    <!-- ";
                   }
-                  ?>
+                  ?> -->
                 </ul>
               </div>
             </div>
@@ -140,27 +140,91 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
         <div class="container">
             <div class="row">
                 <div class="col-md-12 d-flex flex-wrap flex-container">
-                  <?php
-                  if(mysqli_num_rows($query_run) > 0){
-                    foreach($query_run as $tutos){
-                  ?>
+                  
                     <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
-                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/<?=$tutos['FOTO'];?>">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-1.jpeg">
                       <div class="card-body">
-                        <p class="card-text paragraph-style"><?=$tutos['CATEGORIA'] .' - '. $tutos['FECHA'];?></p>
-                        <h5 class="card-title text-white"><?= $tutos['TITULO']; ?></h5>
-                        <p class="card-text paragraph-style"><?=$tutos['AUTOR'];?></p>
-                            <p class="card-text paragraph-style-2 paragraph-color"> <?= $tutos['PALABRAS_CLAVE']; ?></p>
+                        <p class="card-text paragraph-style">HTML - 31/06/2018</p>
+                        <h5 class="card-title text-white">Curso HTML para Principiantes</h5>
+                        <p class="card-text paragraph-style">Fazt</p>
+                            <p class="card-text paragraph-style-2 paragraph-color"> HTML, PROGRAMACION, CURSO</p>
                             <p class="card-text paragraph-style overflow-y-hidden">
-                                <?= $tutos['CONTENIDO']; ?>
+                              Tutorial de HTML para principiantes, cubre los conceptos básicos del lenguaje.
                             </p>
-                            <a href="<?= $tutos['LINK']; ?>" class="btn button-color">Ver tutorial</a>
+                            <a href="https://www.youtube.com/watch?v=rbuYtrNUxg4" class="btn button-color">Ver tutorial</a>
                         </div>
                     </div>
-                    <?php
-                      } // END-FOREACH
-                    } // END-IF
-                    ?>
+
+                    <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-2.jpeg">
+                      <div class="card-body">
+                        <p class="card-text paragraph-style">CSS - 17/09/2021</p>
+                        <h5 class="card-title text-white">Aprende CSS ahora! curso completo</h5>
+                        <p class="card-text paragraph-style">HolaMundo</p>
+                            <p class="card-text paragraph-style-2 paragraph-color"> CSS, CURSO, PRINCIPIANTE</p>
+                            <p class="card-text paragraph-style overflow-y-hidden">
+                              Tutorial de CSS que cubre desde temas básicos hasta nivel medio para personas principiantes.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=wZniZEbPAzk&t=4595s" class="btn button-color">Ver tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-3.jpeg">
+                      <div class="card-body">
+                        <p class="card-text paragraph-style">HTML - CSS - 28/10/2021</p>
+                        <h5 class="card-title text-white">Aprende HTML y CSS - Curso Desde Cero</h5>
+                        <p class="card-text paragraph-style">freeCodeCamp Español</p>
+                            <p class="card-text paragraph-style-2 paragraph-color">HTML,CSS, CURSO, FUNDAMENTOS</p>
+                            <p class="card-text paragraph-style overflow-y-hidden">
+                              Tutorial de HTML y CSS desde cero para principiantes.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=XqFR2lqBYPs" class="btn button-color">Ver tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-4.jpeg">
+                      <div class="card-body">
+                        <p class="card-text paragraph-style">HTML - CSS - 27/07/2022</p>
+                        <h5 class="card-title text-white">Aprende html y css! con 5 proyectos incluidos</h5>
+                        <p class="card-text paragraph-style">Codigo 369</p>
+                            <p class="card-text paragraph-style-2 paragraph-color"> HTML, CSS, PROYECTOS, BASICO</p>
+                            <p class="card-text paragraph-style overflow-y-hidden">
+                              Tutorial para aprender HTML y CSS desde cero con proyectos para entender de mejor forma ambos lengua
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=AXPASVeX74o&t=29s" class="btn button-color">Ver tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-5.jpeg">
+                      <div class="card-body">
+                        <p class="card-text paragraph-style">JavaScript - 19/10/2020</p>
+                        <h5 class="card-title text-white">Curso de JAVASCRIPT desde CERO</h5>
+                        <p class="card-text paragraph-style"> Soy Dalto</p>
+                            <p class="card-text paragraph-style-2 paragraph-color"> JAVASCRIPT, CURSO, JUNIOR</p>
+                            <p class="card-text paragraph-style overflow-y-hidden">
+                              Curso completo de JavaScript que va desde cero hasta el nivel junior.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=z95mZVUcJ-E" class="btn button-color">Ver tutorial</a>
+                        </div>
+                    </div>
+
+                    <div class="card flex-children header-bg-color rounded-corners my-4 mx-3 d-flex align-items-center">
+                      <img class="img-size-secondary px-4 pt-5" src="../img/tutorial-images/tutorial-6.jpeg">
+                      <div class="card-body">
+                        <p class="card-text paragraph-style">JavaScript - 17/08/2019</p>
+                        <h5 class="card-title text-white">Aprende JavaScript en 15 minutos</h5>
+                        <p class="card-text paragraph-style">Victor Robles WEB</p>
+                            <p class="card-text paragraph-style-2 paragraph-color"> JAVASCRIPT, TUTORIAL, BASICO</p>
+                            <p class="card-text paragraph-style overflow-y-hidden">
+                              Tutorial básico de JavaScript que cubre los temas principales para un principiante.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=Q9fwkpxr3Dw" class="btn button-color">Ver tutorial</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

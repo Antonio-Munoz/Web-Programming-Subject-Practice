@@ -1,10 +1,10 @@
-<?php
+<!-- <?php
 session_start();
 $show = false;
 if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] == 1){  
   $show = true;
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark header-bg-color py-2" aria-label="Eighth navbar example">
             <div class="container">
-              <a class="navbar-brand d-flex align-items-center" href="../index.php">
+              <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <img src="../img/Logo.svg" alt="web Logo" width="50">
                 <h1 class="h4 ml-3 text-center" >Programación Web</h1>
               </a>
@@ -28,10 +28,10 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
               <div class="" id="navbarsExample07">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mr-1">
-                    <a class="nav-link" aria-current="page" href="../index.php">inicio</a>
+                    <a class="nav-link" aria-current="page" href="../index.html">inicio</a>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="acerca-de.php">Acerca de</a>
+                    <a class="nav-link" href="acerca-de.html">Acerca de</a>
                   </li>
                   <li class="nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center">
                     <a href="#" class="nav-link d-flex align-items-center justify-content-center">
@@ -42,38 +42,32 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                     </a>
                     <div class="submenu">
                       <ul>
-                        <li><a href="unidades/unidad1.php">Unidad 1</a></li>
+                        <li><a href="unidades/unidad1.html">Unidad 1</a></li>
                         <!-- <li><a href="#">Unidad 2</a></li> -->
                         <!-- <li><a href="#">Unidad 3</a></li> -->
                       </ul>
                     </div>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="contacto.php">Contacto</a>
+                    <a class="nav-link" href="contacto.html">Contacto</a>
                   </li>
-                  <?php
+                  <!-- <?php
                   if($show){
-                    echo "
-                      <li class=\"nav-item mr-1\">
-                        <a class=\"nav-link\" href=\"tutoriales.php\">Tutoriales</a>
+                    echo " -->
+                      <li class="nav-item mr-1">
+                        <a class="nav-link" href="tutoriales.html">Tutoriales</a>
                       </li>
-                      <li class=\"nav-item ml-1\">
-                        <a href=\"perfil.php\" class=\"d-flex justify-content-center align-items-center\">
-                          <img src=\"../img/Logo.png \" class=\"d-inline rounded-circle icon-size\">
-                          <h1 class=\"h5 pt-2 pl-1\">".$_SESSION['username']."</h1>
-                        </a>
-                      </li>
-                    ";
+                    <!-- ";
                   }else{
-                    echo "
-                      <li class=\"nav-item\">
-                        <a href=\"login.php\" class=\"btn button-color d-inline-flex align-items-center px-4\">
+                    echo " -->
+                      <li class="nav-item">
+                        <a href="login.html" class="btn button-color d-inline-flex align-items-center px-4">
                           Iniciar sesión
                         </a>
                       </li>
-                    ";
+                    <!-- ";
                   }
-                  ?>
+                  ?> -->
                 </ul>
               </div>
             </div>
@@ -91,9 +85,9 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                   <div class="flex-column">
                       <h1 class="text-center text-white my-5">Inicio de sesión</h1>
 
-                      <?php
+                      <!-- <?php
                         include('../php/message.php');
-                      ?>
+                      ?> -->
  
                       <form id="register-form" class="container" action="../php/forms-validations.php" method="post" autocomplete="off" enctype="multipart/form-data">
 
@@ -171,9 +165,9 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                       </form>
 
                       <div class="container mt-3 px-5 d-flex justify-content-center">
-                        <a href="login.php">Iniciar sesión</a>
+                        <a href="login.html">Iniciar sesión</a>
                         <p class="d-inline text-primary px-2">|</p>
-                        <a href="forgot-password.php">Has olvidado tu contraseña?</a>
+                        <a href="forgot-password.html">Has olvidado tu contraseña?</a>
                       </div>
                       
                   </div>

@@ -54,14 +54,14 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                     </a>
                     <div class="submenu">
                       <ul>
-                        <li><a href="pages/unidades/unidad1.php">Unidad 1</a></li>
+                        <li><a href="pages/unidades/unidad1.html">Unidad 1</a></li>
                         <!-- <li><a href="#">Unidad 2</a></li> -->
                         <!-- <li><a href="#">Unidad 3</a></li> -->
                       </ul>
                     </div>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="pages/contacto.php">Contacto</a>
+                    <a class="nav-link" href="pages/contacto.html">Contacto</a>
                   </li>
                   <!-- <?php
                   if($show){
@@ -69,34 +69,34 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                     <li class="nav-item mr-1">
                       <a class="nav-link" href="pages/tutoriales.html">Tutoriales</a>
                     </li>
-                    
-                    <!-- <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
-                      <img src="img/user-images/<?php echo $photo; ?>" class="d-inline rounded-circle icon-size">
+
+                    <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
                       <li class='nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center'>
                         <a href='#' class='nav-link h5 d-flex align-items-center justify-content-center'>
-                        <?php echo $_SESSION['username'];?>
+                        Usuario
                           <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill ml-1' viewBox='0 0 16 16'>
                             <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/>
                           </svg>
                         </a>
                         <div class='submenu'>
                           <ul>
-                            <li><a href='pages/perfil.php'>Perfil de usuario</a></li>
+                            <li><a href='pages/perfil.html'>Perfil de usuario</a></li>
 
-                            <?php
+                            <!-- <?php
                             echo $showadmin? "<li><a href='admin/index.php'>Admin</a></li>" : '';
-                            ?>
+                            ?> -->
+                            <li><a href='admin/index.html'>Admin</a></li>
 
-                            <li><a href='php/logout.php'>Cerrar sesion</a></li>
+                            <li><a href='#'>Cerrar sesion</a></li>
                           </ul>
                         </div>
                       </li>
-                    </li> -->
+                    </li>
                   <!-- <?php
                   }else{
                     echo " -->
                       <li class="nav-item">
-                        <a href="pages/login.php" class="btn button-color d-inline-flex align-items-center px-4">
+                        <a href="pages/login.html" class="btn button-color d-inline-flex align-items-center px-4">
                           Iniciar sesión
                         </a>
                       </li>

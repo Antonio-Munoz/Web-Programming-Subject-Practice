@@ -1,18 +1,24 @@
-<?php
+<!-- <?php
+require 'php/connectDB.php';
 session_start();
-$show = false;
+
 if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_user"] && $_SESSION['active'] == 1){  
+    $adminID = $_SESSION['id_user'];
     $username = $_SESSION['username'];
 
-  $photo = $_SESSION['photo'];
-  if(!str_contains($photo, '.')){
+    $query = "SELECT * FROM usuarios WHERE IS_ADMIN = 1";
+    $query_run = mysqli_query($conexion, $query);
+
+    $photo = $_SESSION['photo'];
+    if(!str_contains($photo, '.')){
     $photo = 'usuario.png';
-  }
+    }
 }else {
     header('Location: login.php');
-}
-?>
+} -->
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,14 +27,12 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>Tables - SB Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/my-style.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
@@ -47,9 +51,9 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../img/user-images/<?php echo $photo; ?>" width="30" class="rounded-circle"> <h1 class="h5 d-inline"><?php echo $username;?></h1></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Perfil</a></li>
-                        <li><a class="dropdown-item" href="../index.php">Pagina principal</a></li>
+                        <li><a class="dropdown-item" href="../index.html">Pagina principal</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="php/logout.php?logout=1">Cerrar sesion</a></li>
+                        <li><a class="dropdown-item" href="php/logout.php?logout=1">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -61,18 +65,18 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link active" href="index.html">
+                            <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Administrar</div>
 
-                            <a class="nav-link" href="admin-page.php">
+                            <a class="nav-link active" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Administradores
                             </a>
-                            <a class="nav-link" href="user-page.php">
+                            <a class="nav-link" href="user-page.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Usuarios
                             </a>
@@ -80,7 +84,7 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tutoriales y libros
                             </a>
-                            <a class="nav-link" href="tables.php?page=Comentarios">
+                            <a class="nav-link" href="comments-page.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Comentarios
                             </a>
@@ -92,77 +96,84 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                     </div>
                 </nav>
             </div>
-            
+
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Panel administrativo</h1>
+                        <h1 class="mt-4">Administradorres</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Inicio</li>
+                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                            <li class="breadcrumb-item active">Administradores</li>
                         </ol>
 
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-xl-8 col-md-12">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <p class="fs-5 text-center">
-                                            Panel administrativo del sitio de cursos de desarrollo web desde cero, en donde podras gestionar la pagina por completo, desde sus usuarios hasta el contenido que se encuentre en ella.
-                                        </p>
-                                        <img src="assets/img/cover-page.png" class="img-fluid rounded-5">
-                                    </div>
-                                </div>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                En esta seccion se encuentran los administradores permitidos para gestionar la pagina principal.
                             </div>
                         </div>
 
-                        <!-- CARDS -->
-                        <div class="row justify-content-around mt-5">
-                            <div class="col-xl-2 col-md-6">
-                                <div class="card bg-gradient text-white mb-4">
-                                    <div class="card-header">
-                                        <img class="img-fluid" src="assets/img/vendedor-telefonico.png">
-                                    </div>
-                                    <div class="card-body fs-5 text-dark">Tabla de <br> administradores</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link" href="admin-page.php">Ver tabla</a>
-                                        <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-                                    </div>
+                        <!-- <?php
+                        include 'php/message.php';
+                        ?> -->
+
+                        <div class="card mb-4">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="d-inline">
+                                    <i class="fas fa-table me-1"></i>
+                                    DataTable Example
                                 </div>
+                                <a href="php/add-admin.html" class="btn btn-primary">Añadir administrador</a>
                             </div>
-                            <div class="col-xl-2 col-md-6">
-                                <div class="card bg-light text-dark mb-4">
-                                    <div class="card-header">
-                                        <img class="img-fluid" src="assets/img/trabajo-en-equipo.png">
-                                    </div>
-                                    <div class="card-body fs-5">Tabla de<br>usuarios</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link" href="user-page.php">Ver tabla</a>
-                                        <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-md-6">
-                                <div class="card bg-gradient text-dark mb-4">
-                                    <div class="card-header">
-                                        <img class="img-fluid" src="assets/img/sitio-web.png">
-                                    </div>
-                                    <div class="card-body fs-5">Tabla de<br>tutoriales</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link" href="tutorial-page.php">Ver tabla</a>
-                                        <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-md-6">
-                                <div class="card bg-light text-dark mb-4">
-                                    <div class="card-header">
-                                        <img class="img-fluid" src="assets/img/trabajo-creativo.png">
-                                    </div>
-                                    <div class="card-body fs-5">Tabla de <br>comentarios</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-dark stretched-link" href="comments-page.php">Ver tabla</a>
-                                        <div class="small text-dark"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Foto</th>
+                                            <th>Usuario</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Direccion</th>
+                                            <th>Telefono</th>
+                                            <th>Correo</th>
+                                            <th>Contraseña</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- <?php
+                                        if(mysqli_num_rows($query_run) > 0) {
+                                            foreach ($query_run as $admin) {
+                                        ?> -->
+                                        
+                                        <tr>
+                                            <td>
+                                                <img class="rounded-circle" width="50" src="../img/user-images/<?php echo $admin['PHOTO']; ?>">
+                                            </td>
+                                            <td><?php echo $admin['USERNAME']; ?></td>
+                                            <td><?php echo $admin['NAME']; ?></td>
+                                            <td><?php echo $admin['LASTNAME']; ?></td>
+                                            <td><?php echo $admin['ADDRESS']; ?></td>
+                                            <td><?php echo $admin['PHONE']; ?></td>
+                                            <td><?php echo $admin['EMAIL']; ?></td>
+                                            <td><?php echo $admin['PASSWORD']; ?></td>
+                                            <td><?php echo $admin['ACTIVE']; ?></td>
+                                            <td>
+                                                <a href="php/edit-admin.php?id=<?= $admin['ID_USER']; ?>" class="btn btn-warning">Editar</a>
+                                                <form action="php/admin-form-validation.php" method="post" class="d-inline">
+                                                    <button type="submit" name="delete-admin" class="btn btn-danger" value="<?= $admin['ID_USER']; ?>">Eliminar</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+
+                                        <!-- <?php
+                                            }
+                                        }
+                                        ?> -->
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -171,7 +182,7 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Erick Antonio Muñoz 2023</div>
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
@@ -182,12 +193,8 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                 </footer>
             </div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <!-- <script src="assets/demo/chart-area-demo.js"></script> -->
-        <!-- <script src="assets/demo/chart-bar-demo.js"></script> -->
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 $show = false;
 if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] == 1){  
@@ -13,7 +13,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
     $photo = 'usuario.png';
   }
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark header-bg-color py-2" aria-label="Eighth navbar example">
             <div class="container">
-              <a class="navbar-brand d-flex align-items-center" href="../../index.php">
+              <a class="navbar-brand d-flex align-items-center" href="../../index.html">
                 <img src="../../img/Logo.svg" alt="web Logo" width="50">
                 <h1 class="h4 ml-3 text-center" >Programación Web</h1>
               </a>
@@ -38,10 +38,10 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
               <div class="" id="navbarsExample07">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mr-1">
-                    <a class="nav-link" aria-current="page" href="../../index.php">inicio</a>
+                    <a class="nav-link" aria-current="page" href="../../index.html">inicio</a>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="../acerca-de.php">Acerca de</a>
+                    <a class="nav-link" href="../acerca-de.html">Acerca de</a>
                   </li>
                   <li class="nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center">
                     <a href="#" class="active nav-link d-flex align-items-center justify-content-center">
@@ -52,53 +52,50 @@ if(isset($_SESSION["id_user"]) && $_SESSION["id_user"] && $_SESSION['active'] ==
                     </a>
                     <div class="submenu">
                       <ul>
-                        <li><a href="unidad1.php">Unidad 1</a></li>
+                        <li><a href="unidad1.html">Unidad 1</a></li>
                       </ul>
                     </div>
                   </li>
                   <li class="nav-item mr-1">
-                    <a class="nav-link" href="../contacto.php">Contacto</a>
+                    <a class="nav-link" href="../contacto.html">Contacto</a>
                   </li>
-                  <?php
+                  <!-- <?php
                   if($show){
-                  ?>
+                  ?> -->
                       <li class="nav-item mr-1">
-                        <a class="nav-link" href="tutoriales.php">Tutoriales</a>
+                        <a class="nav-link" href="../tutoriales.html">Tutoriales</a>
                       </li>
                       
                       <li class="nav-item ml-1 d-flex justify-content-center align-items-center">
-                        <img src="../../img/user-images/<?php echo $photo; ?>" class="d-inline rounded-circle icon-size">
                         <li class='nav-item open-submenu mr-1 d-flex flex-column align-items-center justify-content-center'>
                           <a href='#' class='nav-link h5 d-flex align-items-center justify-content-center'>
-                          <?php echo $_SESSION['username'];?>
+                          Usuario
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-caret-down-fill ml-1' viewBox='0 0 16 16'>
                               <path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/>
                             </svg>
                           </a>
                           <div class='submenu'>
                             <ul>
-                              <li><a href='../perfil.php'>Perfil de usuario</a></li>
+                              <li><a href='../perfil.html'>Perfil de usuario</a></li>
 
-                              <?php
-                              echo $showadmin? "<li><a href='../../admin/index.php'>Admin</a></li>" : '';
-                              ?>
+                              <li><a href='../../admin/index.html'>Admin</a></li>
 
-                              <li><a href='../../php/logout.php'>Cerrar sesion</a></li>
+                              <li><a href='../../index.html'>Cerrar sesion</a></li>
                             </ul>
                           </div>
                         </li>
                       </li>
-                  <?php
+                  <!-- <?php
                   }else{
-                    echo "
-                      <li class=\"nav-item\">
-                        <a href=\"../pages/login.php\" class=\"btn button-color d-inline-flex align-items-center px-4\">
+                    echo " -->
+                      <li class="nav-item">
+                        <a href="../login.html " class="btn button-color d-inline-flex align-items-center px-4">
                           Iniciar sesión
                         </a>
                       </li>
-                    ";
+                    <!-- ";
                   }
-                  ?>
+                  ?> -->
                 </ul>
               </div>
             </div>
