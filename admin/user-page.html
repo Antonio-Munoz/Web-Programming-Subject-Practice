@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require 'php/connectDB.php';
 session_start();
 
@@ -17,7 +17,7 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
 }
 
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,7 +50,7 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="../img/user-images/<?php echo $photo; ?>" width="30" class="rounded-circle"> <h1 class="h5 d-inline"><?php echo $username;?></h1></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Perfil</a></li>
-                        <li><a class="dropdown-item" href="../index.php">Pagina principal</a></li>
+                        <li><a class="dropdown-item" href="../index.html">Pagina principal</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="php/logout.php?logout=1">Logout</a></li>
                     </ul>
@@ -64,14 +64,14 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.php">
+                            <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Administrar</div>
 
-                            <a class="nav-link" href="admin-page.php">
+                            <a class="nav-link" href="admin-page.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Administradores
                             </a>
@@ -79,11 +79,11 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Usuarios
                             </a>
-                            <a class="nav-link" href="tutorial-page.php">
+                            <a class="nav-link" href="tutorial-page.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tutoriales y libros
                             </a>
-                            <a class="nav-link" href="comments-page.php">
+                            <a class="nav-link" href="comments-page.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Comentarios
                             </a>
@@ -113,9 +113,9 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                             </div>
                         </div>
 
-                        <?php
+                        <!-- <?php
                         include 'php/message.php';
-                        ?>
+                        ?> -->
 
                         <div class="card mb-4">
                             <div class="card-header d-flex justify-content-between">
@@ -143,10 +143,10 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                     </thead>
                                     <tbody>
 
-                                        <?php
+                                        <!-- <?php
                                         if(mysqli_num_rows($query_run) > 0) {
                                             foreach ($query_run as $admin) {
-                                        ?>
+                                        ?> -->
                                         
                                         <tr>
                                             <td>
@@ -168,10 +168,10 @@ if(isset($_SESSION["id_user"]) && isset($_SESSION['is_admin']) && $_SESSION["id_
                                             </td>
                                         </tr>
 
-                                        <?php
+                                        <!-- <?php
                                             }
                                         }
-                                        ?>
+                                        ?> -->
                                         
                                     </tbody>
                                 </table>
